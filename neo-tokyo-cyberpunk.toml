@@ -11,6 +11,7 @@ $git_branch\
 $git_status\
 [](fg:#00FFFF bg:#7AA2F7)\
 $c\
+$cpp\
 $elixir\
 $elm\
 $golang\
