@@ -7,6 +7,7 @@ $username\
 [](bg:#FF007F fg:#1A1B26)\
 $directory\
 [](fg:#FF007F bg:#00FFFF)\
+${custom.git_upstream}\
 $git_branch\
 $git_status\
 [](fg:#00FFFF bg:#7AA2F7)\
@@ -94,6 +95,16 @@ format = '[ $symbol ($version) ]($style)'
 symbol = " "
 style = "bg:#7AA2F7 fg:#1A1B26 bold"
 format = '[ $symbol ($version) ]($style)'
+
+# Show the GitHub logo before the git branch whenever the current branch is
+# tracking a remote branch (like powerlevel10k does). Branches without an
+# upstream only display the plain git branch segment.
+[custom.git_upstream]
+when = 'git rev-parse --abbrev-ref @{upstream} >/dev/null 2>&1'
+require_repo = true
+symbol = " \uf09b"
+format = '[$symbol]($style)'
+style = "bg:#00FFFF fg:#1A1B26 bold"
 
 [git_branch]
 symbol = ""
